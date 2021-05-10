@@ -31,12 +31,6 @@ public class CommonSteps extends PageInitializer {
     }
 
     /**
-     * takes screenshot
-     * @param name
-     * take a name of a test and returns a path to screenshot takes
-     */
-
-    /**
      * This method click in an element and has wait implemented on it
      *
      * @param element

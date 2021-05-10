@@ -1,21 +1,26 @@
 package com.sample.pages;
 
 import com.sample.utilities.Driver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class CommonPageElements extends Driver {
-
     public CommonPageElements() {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(className = "app_logo")
-    public WebElement appLogo;
+    public void navigateTo(String menuOption){
+        driver.findElement(By.xpath("//span[.='"+menuOption+"']")).click();
+    }
 
-    @FindBy(xpath = "//a[@class=\"shopping_cart_link\"]")
-    public WebElement goToCartButton;
+    public void clickOnButtonOf(String buttonText){
+        if(driver.findElements(By.xpath("//span[.='"+buttonText+"']")).size()!=0){
+            driver.findElement(By.xpath("//span[.='"+buttonText+"']")).click();
+        }
+        else if(driver.findElements(By.xpath("//a[.=' "+buttonText+" ']")).size()!=0){
+            driver.findElement(By.xpath("//a[.=' "+buttonText+" ']")).click();
+        }
 
-
+    }
 }
+

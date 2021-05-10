@@ -23,8 +23,8 @@ public class Hooks {
 //    }
 //
     @Before
-    public void setUp() {
-        Driver.get();
+    public void start() {
+        Driver.setUp();
     }
 
     @After

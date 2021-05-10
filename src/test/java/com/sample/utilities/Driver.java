@@ -22,7 +22,7 @@ public class Driver {
      * This method will create a driver and return it
      * @return WebDriver driver
      */
-    public static WebDriver get() {
+    public static WebDriver setUp() {
 
             String browser = ConfigurationReader.get("browser");
             switch (browser) {
